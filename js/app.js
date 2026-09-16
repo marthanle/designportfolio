@@ -40,9 +40,9 @@ function renderHome() {
       <div class="hero wrap">
         <div class="hero-copy">
           <div class="badge"><span class="badge-dot"></span>Open to new opportunities</div>
-          <h1>Hi, I'm Martha — a product mind learning to design, build, and <span class="accent">make things real</span> &#10022;</h1>
+          <h1>Hi, I'm Martha, a product mind learning to design, build, and <span class="accent">make things real</span> &#10022;</h1>
           <p class="hero-role">Sr. Product Associate, based in Dallas</p>
-          <p class="hero-desc">Surrounded by people who design and code for a living, I caught the bug — now I'm learning to build my own ideas instead of just managing everyone else's.</p>
+          <p class="hero-desc">Surrounded by people who design and code for a living, I caught the bug, and now I'm learning to build my own ideas instead of just managing everyone else's.</p>
           <div class="hero-cta">
             <a class="btn-primary" href="#work">See my work</a>
             <a class="btn-secondary" href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
@@ -58,7 +58,7 @@ function renderHome() {
       <div class="section-head">
         <p class="eyebrow">Selected Work</p>
         <h2>Featured Projects</h2>
-        <p>Case studies from work and coursework — some user-facing, some just for the love of making things.</p>
+        <p>Case studies from work and coursework: some user-facing, some just for the love of making things.</p>
       </div>
       <div class="work-grid">${cards}</div>
     </section>
@@ -69,8 +69,8 @@ function renderHome() {
         <div class="about-copy">
           <p class="eyebrow">About Me</p>
           <h2>A little more about me</h2>
-          <p>I'm a Sr. Product Associate based in Dallas who likes untangling messy workflows into interfaces that feel obvious in hindsight. My background spans internship work and coursework — from enterprise tools to mobile apps to 3D animation.</p>
-          <p>I care most about the parts of a project that don't show up in the final screenshots — the research that shaped a decision, the constraint that led to a simpler flow. I'm always looking for the next problem worth untangling.</p>
+          <p>I'm a Sr. Product Associate based in Dallas who likes untangling messy workflows into interfaces that feel obvious in hindsight. My background spans internship work and coursework, from enterprise tools to mobile apps to 3D animation.</p>
+          <p>I care most about the parts of a project that don't show up in the final screenshots: the research that shaped a decision, the constraint that led to a simpler flow. I'm always looking for the next problem worth untangling.</p>
         </div>
       </div>
     </section>
@@ -85,12 +85,12 @@ function renderHome() {
         <div class="philosophy-card">
           <p class="philosophy-num">01</p>
           <h3>User-Centered</h3>
-          <p class="body">Every decision starts with the person using the product — their goals, context, and constraints shape everything that follows.</p>
+          <p class="body">Every decision starts with the person using the product: their goals, context, and constraints shape everything that follows.</p>
         </div>
         <div class="philosophy-card">
           <p class="philosophy-num">02</p>
           <h3>Detail-Oriented</h3>
-          <p class="body">The small stuff — spacing, copy, a transition's timing — is what makes a product feel considered instead of just functional.</p>
+          <p class="body">The small stuff (spacing, copy, a transition's timing) is what makes a product feel considered instead of just functional.</p>
         </div>
         <div class="philosophy-card">
           <p class="philosophy-num">03</p>
@@ -122,7 +122,7 @@ function renderHome() {
     </section>
 
     <section class="pullquote-section wrap">
-      <p>Good design isn't decoration — it's <span class="text-accent">clarity</span>, built one small decision at a time &#10049;</p>
+      <p>Good design isn't decoration. It's <span class="text-accent">clarity</span>, built one small decision at a time &#10049;</p>
     </section>
 
     <section id="contact" class="contact-section">
@@ -421,14 +421,14 @@ function render() {
       navHome.classList.add('hidden');
       navBack.classList.remove('hidden');
       window.scrollTo(0, 0);
-      document.title = `${project.title} — Martha Le`;
+      document.title = `${project.title} | Martha Le`;
       return;
     }
   }
   app.innerHTML = renderHome();
   navHome.classList.remove('hidden');
   navBack.classList.add('hidden');
-  document.title = 'Martha Le — Product Design Portfolio';
+  document.title = 'Martha Le | Product Design Portfolio';
 }
 
 window.addEventListener('hashchange', () => { render(); updateScrollProgress(); });
