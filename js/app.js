@@ -162,7 +162,7 @@ function blockQuote(b) {
     </div>`).join('');
   return `
     <div class="blk blk-quote">
-      <p class="blk-kicker">The Problem</p>
+      <p class="blk-kicker">${escapeHtml(b.kicker || 'The Problem')}</p>
       <p class="blk-quote-text">"${escapeHtml(b.quote)}"</p>
       <div class="blk-points-grid">${points}</div>
     </div>`;
@@ -185,7 +185,7 @@ function blockAudience(b) {
 function blockDivider(b) {
   return `
     <div class="blk-divider">
-      <p class="num">${escapeHtml(b.num || '')}</p>
+      ${b.num ? `<p class="num">${escapeHtml(b.num)}</p>` : ''}
       <div>
         <p class="kicker">${escapeHtml(b.kicker)}</p>
         <p class="title">${escapeHtml(b.title)}</p>
@@ -194,10 +194,19 @@ function blockDivider(b) {
 }
 
 function blockImageNote(b) {
+  const gallery = (b.images || []).length ? `
+    <div class="imagenote-grid">
+      ${b.images.map(img => `
+        <figure>
+          <img src="${escapeHtml(img.src)}" alt="${escapeHtml(img.alt || '')}" loading="lazy">
+          ${img.caption ? `<figcaption>${escapeHtml(img.caption)}</figcaption>` : ''}
+        </figure>`).join('')}
+    </div>` : '';
   return `
     <div class="blk blk-imagenote">
       <h3>${escapeHtml(b.heading)}</h3>
       <p class="note">${escapeHtml(b.note)}</p>
+      ${gallery}
     </div>`;
 }
 
