@@ -41,7 +41,7 @@ const PROJECTS = [
         { title: 'Type', body: 'A serif for screen titles, paired with a small-caps sans for labels.' },
         { title: 'Components', body: 'Filter pills, favoritable cards, a five-tab nav, and consistent black buttons throughout.' },
       ]},
-      { type: 'divider', kicker: 'Part Two', title: 'MVP Features' },
+      { type: 'divider', kicker: 'Part Two', title: 'Features' },
       { type: 'features', heading: 'What It Does', items: [
         { title: "Today's Suggestion", body: "A daily outfit recommendation pulled from the user's wardrobe, with a full detail view." },
         { title: 'Wardrobe Catalog', body: 'Grid view with filters, individual item detail, and the ability to edit or delete pieces.' },
@@ -55,21 +55,25 @@ const PROJECTS = [
       { type: 'divider', kicker: 'Part Three', title: 'Design Approach' },
       { type: 'story', heading: 'An editorial-first system', body: 'ClosetMind is designed editorial-first, with an aesthetic that feels more like a fashion archive than a utility app. The process started with competitive analysis and "how might we" framing, then moved to building a design system before touching any screens. Each screen was designed with options at key decision points, validated through informal user testing, and iterated from there.' },
       { type: 'story', heading: 'A deliberate restraint', body: 'The profile screen is deliberately minimal. No stats, no gamification. The focus stays on the clothes.' },
-      { type: 'divider', kicker: 'Part Four', title: 'Exploration & Iteration' },
-      { type: 'imageNote', heading: 'Early Sketches', note: 'Placeholder note on early ideation sketches.', count: 3 },
-      { type: 'imageNote', heading: 'Style References', note: 'Placeholder note on mood/inspiration references.', count: 4 },
-      { type: 'imageNote', heading: 'Exploration Options', note: 'Placeholder note on options considered before converging.', count: 3 },
-      { type: 'beforeAfter', heading: 'Iteration: Round 1', title: 'Placeholder round 1 title' },
-      { type: 'beforeAfter', heading: 'Iteration: Round 2', title: 'Placeholder round 2 title' },
-      { type: 'workingWithAI', heading: 'Process, Honestly', helped: [
-        'Placeholder: where Claude sped up the work (e.g. UI scaffolding, copy drafts, variations).',
+      { type: 'divider', kicker: 'Part Four', title: 'Working With Claude' },
+      { type: 'workingWithAI', heading: 'What Claude Was Good For', helped: [
+        'Scaffolding screens and component states quickly in Claude Design, so more time went into the flows and copy than into rebuilding basic UI from scratch.',
       ], fellShort: [
-        'Placeholder: where your own judgment had to override or refine what AI produced.',
+        "It couldn't tell me whether a pattern would actually make sense to someone who'd never used the app before. That only surfaced once real people tried it, which is exactly what usability testing caught." ,
       ]},
       { type: 'divider', kicker: 'Part Five', title: 'Usability Testing' },
-      { type: 'story', heading: 'What I tested', body: "I walked four people through the ClosetMind prototype (design-only, no backend or database): a product manager, a software engineer, my actual target user, and a design mentor. Each ran through the core flows unmoderated, at their own pace: adding a piece by photo, barcode, or search; matching an inspo photo to pieces they owned; generating an outfit; and saving a look." },
-      { type: 'story', heading: 'What worked', body: "Every tester understood the concept, a digital closet that curates outfit ideas, from the first screen, with no explanation needed. Two testers instinctively tapped Today's Suggestion first when looking for an outfit, confirming it as the strongest entry point on Home. The alternatives-and-checkmarks pattern in the inspo-matching flow read clearly as “what I already own vs. what I'd need,” and saving a look surfacing back on Home matched what people expected. One tester said they'd use an app like this daily, especially while traveling or when decision fatigue sets in." },
-      { type: 'story', heading: "What I'd change next", body: "Today's Suggestion doesn't yet open a detail view, both non-designer testers expected one, so that's the clearest gap to close. First-time use was another blind spot: nothing explains what Rediscover does before you have wardrobe history, so it needs a short tooltip or an empty state. And cost surfaced as a hard line: one tester said they wouldn't use it at all if it required payment, which rules out a paywall as the monetization path." },
+      { type: 'story', heading: 'What I tested', body: "I walked four people through the ClosetMind prototype (design-only, no backend): a product manager, a software engineer, my target user, and a design mentor. Each ran the core flows unmoderated, at their own pace, adding a piece, matching an inspo photo, generating an outfit, and saving a look." },
+      { type: 'features', heading: 'What worked', items: [
+        { title: 'Instant clarity', body: 'Every tester understood the concept from the first screen. No explanation needed.' },
+        { title: "Today's Suggestion wins", body: 'Two testers tapped it first when looking for an outfit, confirming it as the strongest entry point.' },
+        { title: 'Alternatives read clearly', body: 'The alternatives-and-checkmarks pattern mapped instantly to "what I own vs. what I’d need."' },
+        { title: 'Daily-use potential', body: "One tester said they'd use it daily, especially while traveling." },
+      ]},
+      { type: 'columns', heading: "What I'd change next", items: [
+        { title: 'No detail view', body: "Today's Suggestion doesn't open one yet. Both non-designer testers expected it to." },
+        { title: 'No onboarding', body: 'Rediscover needs a tooltip or empty state before a user has wardrobe history.' },
+        { title: 'Stay free', body: "One tester said cost would be a dealbreaker, a signal to design this free, not to add a paywall later." },
+      ]},
       { type: 'divider', kicker: 'Part Six', title: 'The Final Solution' },
       { type: 'imageNote', heading: 'Key Screens', note: 'Home, Wardrobe, Item Detail, Inspo, Mira, and Profile, the editorial-first system carried across every screen.', images: [
         { src: 'assets/closetmind/home.png', alt: 'ClosetMind Home screen', caption: 'Home' },
