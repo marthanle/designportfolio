@@ -24,7 +24,7 @@ const PROJECTS = [
     blurb: 'Helping people build outfits from clothes they already own.',
     role: 'UX Designer & Engineer',
     timeline: '1 semester',
-    tools: 'Figma, Claude',
+    tools: 'Claude Design, Claude Code',
     overview: 'ClosetMind is a mobile app that helps people rediscover and wear the clothes they already own. Tagline: your wardrobe, archived. Designed for my Principles of Digital Design course, this was the first project where I owned the full process myself: research, definition, design, and testing.',
     reflection: "This was my first project built entirely from my own research instead of a client brief, which meant I couldn't lean on anyone else's assumptions about the user. It pushed me to trust, and then test, my own instincts.",
     blocks: [
@@ -89,7 +89,7 @@ const PROJECTS = [
         { src: 'assets/closetmind/add-item.png', alt: 'Add to your wardrobe modal', caption: '2. Choose how to add it' },
         { src: 'assets/closetmind/item-detail.png', alt: 'Item detail confirmation screen', caption: '3. Confirm the details' },
       ]},
-      { type: 'story', kicker: 'Outcome & Impact', body: "ClosetMind is currently a design-only prototype, no backend or database, built and tested in Figma and Claude Design. Across four usability sessions the core concept validated cleanly: every tester understood the value within seconds, and the target user confirmed it solves a problem she actually has. The clearest open threads are a detail view for Today's Suggestion, onboarding for first-time users, and deeper wardrobe organization (categories, filters, style tags) that came up as the most-requested next step." },
+      { type: 'story', kicker: 'Outcome & Impact', body: "ClosetMind is currently a design-only prototype, no backend or database, built and tested in Claude Design and Claude Code. Across four usability sessions the core concept validated cleanly: every tester understood the value within seconds, and the target user confirmed it solves a problem she actually has. The clearest open threads are a detail view for Today's Suggestion, onboarding for first-time users, and deeper wardrobe organization (categories, filters, style tags) that came up as the most-requested next step." },
       { type: 'reflectionBlock', quote: "Trust it, then test it: that's the only instinct worth keeping.", keepGoing: "Add a detail view for Today's Suggestion, onboarding for first-time users, and richer wardrobe organization (categories, filters, style tags).", differently: "I'd capture process artifacts, sketches, style references, iteration rounds, as I went instead of reconstructing them afterward. A portfolio review made it clear how much stronger the story reads when that thinking is documented in the moment, not after the fact." },
     ],
   },
@@ -233,7 +233,7 @@ const PROJECTS = [
   {
     id: '3d',
     tag: '3D / Motion',
-    title: '3D Modeling & Animation Capstone',
+    title: '3D Modeling & Animation',
     blurb: 'A short animated study exploring form, material, and motion.',
     role: 'Solo, 3D Artist',
     timeline: '1 semester',
