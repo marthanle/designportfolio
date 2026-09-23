@@ -52,6 +52,13 @@ ul { list-style: none; }
   .wrap { padding-left: 24px; padding-right: 24px; }
 }
 
+@media (max-width: 560px) {
+  .site-header { padding: 16px 20px; flex-wrap: wrap; row-gap: 12px; }
+  .nav-home { flex-wrap: wrap; gap: 4px 8px; font-size: 13.5px; }
+  .nav-home a:not(.nav-resume) { padding: 6px 10px; }
+  .nav-resume { padding: 8px 14px; font-size: 13px; }
+}
+
 /* ---- Header ---- */
 .site-header {
   position: sticky; top: 0; z-index: 50;
@@ -349,6 +356,8 @@ ul { list-style: none; }
   box-shadow: 0 8px 24px -14px oklch(23% 0.02 50 / 0.25);
 }
 .imagenote-grid figcaption { font-size: 12.5px; color: var(--ink-70); margin-top: 8px; text-align: center; }
+.imagenote-grid--wide { grid-template-columns: 1fr; gap: 28px; }
+.imagenote-grid--wide img { aspect-ratio: auto; height: auto; }
 
 .columns-grid .title { font-weight: 600; font-size: 15px; margin-bottom: 8px; color: var(--accent); }
 .columns-grid .body { font-size: 14px; line-height: 1.6; color: var(--ink-70); }
@@ -359,7 +368,14 @@ ul { list-style: none; }
 .feature-card .title { font-weight: 600; font-size: 15px; margin-bottom: 6px; color: var(--accent-soft-text); }
 .feature-card .body { font-size: 14px; line-height: 1.6; color: var(--ink-80); }
 
-.beforeafter-sub { font-size: 15px; color: var(--ink-70); }
+.beforeafter-sub { font-size: 15px; color: var(--ink-70); margin-bottom: 20px; }
+.beforeafter-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 640px) { .beforeafter-grid { grid-template-columns: 1fr; } }
+.beforeafter-grid .col-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-70); margin-bottom: 10px; }
+.beforeafter-grid img, .beforeafter-grid .img-slot {
+  width: 100%; height: 280px; object-fit: contain; background: var(--chip); border-radius: 14px; border: 1px solid var(--border);
+}
+.beforeafter-grid .img-slot { display: flex; align-items: center; justify-content: center; background: var(--chip); color: oklch(58% 0.01 60); font-size: 13px; text-align: center; padding: 12px; }
 
 .reflection-block { background: var(--chip); border-radius: 20px; padding: 40px; margin-bottom: 56px; }
 .reflection-block .blk-kicker { margin-bottom: 16px; }

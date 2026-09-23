@@ -195,7 +195,7 @@ function blockDivider(b) {
 
 function blockImageNote(b) {
   const gallery = (b.images || []).length ? `
-    <div class="imagenote-grid">
+    <div class="imagenote-grid${b.wide ? ' imagenote-grid--wide' : ''}">
       ${b.images.map(img => `
         <figure>
           <img src="${escapeHtml(img.src)}" alt="${escapeHtml(img.alt || '')}" loading="lazy">
@@ -237,11 +237,27 @@ function blockFeatures(b) {
 }
 
 function blockBeforeAfter(b) {
+  const gallery = (b.beforeSrc || b.afterSrc) ? `
+    <div class="beforeafter-grid">
+      <div>
+        <p class="col-label">Before</p>
+        ${b.beforeSrc ? `<img src="${escapeHtml(b.beforeSrc)}" alt="${escapeHtml(b.beforeAlt || 'Before')}">` : imgSlot('No before image')}
+      </div>
+      <div>
+        <p class="col-label">After</p>
+        ${b.afterSrc ? `<img src="${escapeHtml(b.afterSrc)}" alt="${escapeHtml(b.afterAlt || 'After')}">` : imgSlot('No after image')}
+      </div>
+    </div>` : '';
   return `
     <div class="blk">
       <h3>${escapeHtml(b.heading)}</h3>
-      <p class="beforeafter-sub" style="margin-bottom:0;">${escapeHtml(b.title)}</p>
+      <p class="beforeafter-sub" style="${gallery ? '' : 'margin-bottom:0;'}">${escapeHtml(b.title)}</p>
+      ${gallery}
     </div>`;
+}
+
+function imgSlot(placeholder) {
+  return `<div class="img-slot">${escapeHtml(placeholder)}</div>`;
 }
 
 function blockReflection(b) {
