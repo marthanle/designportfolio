@@ -356,7 +356,7 @@ function blockStyleDirections(b) {
   }).join('');
   return `
     <div class="blk">
-      <p class="blk-kicker accent">Style Directions</p>
+      <p class="blk-kicker accent">${escapeHtml(b.kicker || 'Style Directions')}</p>
       <h3>${escapeHtml(b.heading)}</h3>
       <div class="style-directions">${dirs}</div>
       <p class="blend-logic">${escapeHtml(b.blendLogic)}</p>
