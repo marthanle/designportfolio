@@ -237,7 +237,7 @@ ul { list-style: none; }
 /* ---- Philosophy ---- */
 .philosophy-section { padding: 100px 0 130px; position: relative; isolation: isolate; }
 .philosophy-section::before {
-  content: ''; position: absolute; inset: 150px -40px 30px; z-index: -1; pointer-events: none; filter: blur(24px);
+  content: ''; position: absolute; inset: 150px 0 30px; z-index: -1; pointer-events: none; filter: blur(24px);
   background:
     radial-gradient(420px circle at 12% 55%, oklch(88% 0.09 345 / 0.38), transparent 70%),
     radial-gradient(420px circle at 50% 50%, oklch(88% 0.08 300 / 0.32), transparent 70%),
