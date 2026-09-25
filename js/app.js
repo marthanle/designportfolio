@@ -228,7 +228,7 @@ function blockImageNote(b) {
     <div class="imagenote-grid${b.wide ? ' imagenote-grid--wide' : ''}${b.cols3 ? ' imagenote-grid--cols3' : ''}">
       ${b.images.map(img => `
         <figure>
-          <img src="${escapeHtml(img.src)}" alt="${escapeHtml(img.alt || '')}" loading="lazy">
+          <img src="${escapeHtml(img.src)}" alt="${escapeHtml(img.alt || '')}">
           ${img.caption ? `<figcaption>${escapeHtml(img.caption)}</figcaption>` : ''}
         </figure>`).join('')}
     </div>` : '';
