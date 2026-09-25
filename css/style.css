@@ -47,16 +47,9 @@ img { display: block; max-width: 100%; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 
-.wrap { max-width: 1160px; margin: 0 auto; padding-left: 56px; padding-right: 56px; }
+.wrap { max-width: calc(1160px + 112px); margin: 0 auto; padding-left: 56px; padding-right: 56px; }
 @media (max-width: 640px) {
   .wrap { padding-left: 24px; padding-right: 24px; }
-}
-
-@media (max-width: 560px) {
-  .site-header { padding: 16px 20px; flex-wrap: wrap; row-gap: 12px; }
-  .nav-home { flex-wrap: wrap; gap: 4px 8px; font-size: 13.5px; }
-  .nav-home a:not(.nav-resume) { padding: 6px 10px; }
-  .nav-resume { padding: 8px 14px; font-size: 13px; }
 }
 
 /* ---- Header ---- */
@@ -129,10 +122,10 @@ ul { list-style: none; }
 
 /* ---- Hero ---- */
 .hero {
-  padding: 120px 0 100px;
+  padding-block: 120px 100px;
   display: flex; gap: 64px; align-items: center; justify-content: space-between; flex-wrap: wrap;
 }
-.hero-copy { flex: 1; min-width: 320px; display: flex; flex-direction: column; gap: 22px; }
+.hero-copy { flex: 1; min-width: min(320px, 100%); display: flex; flex-direction: column; gap: 22px; }
 .badge {
   display: inline-flex; align-items: center; gap: 8px; padding: 7px 16px;
   background: var(--chip); color: oklch(35% 0.015 55); border-radius: 999px;
@@ -140,7 +133,7 @@ ul { list-style: none; }
 }
 .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 .hero h1 {
-  font-family: 'Lora', serif; font-weight: 500; font-size: 50px; line-height: 1.25; letter-spacing: -0.01em;
+  font-family: 'Lora', serif; font-weight: 500; font-size: clamp(34px, 8.6vw, 50px); line-height: 1.22; letter-spacing: -0.01em;
 }
 .text-accent { color: var(--accent); }
 .hero h1 .accent { color: var(--accent); font-style: normal; }
@@ -171,11 +164,11 @@ ul { list-style: none; }
   color: var(--accent); margin-bottom: 10px;
 }
 .section-head { margin-bottom: 48px; max-width: 760px; }
-.section-head h2 { font-family: 'Lora', serif; font-weight: 600; font-size: 36px; margin-bottom: 12px; }
+.section-head h2 { font-family: 'Lora', serif; font-weight: 600; font-size: clamp(28px, 7vw, 36px); margin-bottom: 12px; }
 .section-head p { color: var(--ink-70); font-size: 16px; line-height: 1.6; }
 
 /* ---- Work grid ---- */
-.work-section { padding: 60px 0 100px; }
+.work-section { padding-block: 60px 100px; }
 .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
 @media (max-width: 800px) { .work-grid { grid-template-columns: 1fr; } }
 
@@ -229,13 +222,13 @@ ul { list-style: none; }
 }
 .about-inner { display: flex; gap: 64px; align-items: center; flex-wrap: wrap; }
 .about-photo { width: 100%; max-width: 360px; height: 440px; flex-shrink: 0; border-radius: 24px; object-fit: cover; }
-.about-copy { flex: 1; min-width: 300px; }
+.about-copy { flex: 1; min-width: min(300px, 100%); }
 .about-copy h2 { font-family: 'Lora', serif; font-weight: 600; font-size: 32px; margin-bottom: 20px; }
 .about-copy p { font-size: 16px; line-height: 1.7; color: var(--ink-90); margin-bottom: 16px; }
 .about-copy p:last-child { margin-bottom: 0; }
 
 /* ---- Philosophy ---- */
-.philosophy-section { padding: 100px 0 130px; position: relative; isolation: isolate; }
+.philosophy-section { padding-block: 100px 130px; position: relative; isolation: isolate; }
 .philosophy-section::before {
   content: ''; position: absolute; inset: 150px 0 30px; z-index: -1; pointer-events: none; filter: blur(24px);
   background:
@@ -277,7 +270,7 @@ ul { list-style: none; }
 .philosophy-card p.body { color: var(--ink-70); font-size: 15px; line-height: 1.65; }
 
 /* ---- Skills ---- */
-.skills-section { padding: 0 0 100px; }
+.skills-section { padding-block: 0 100px; }
 .skills-groups { display: flex; flex-direction: column; gap: 22px; }
 .skills-group-label {
   font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
@@ -294,7 +287,7 @@ ul { list-style: none; }
 .skill-pill.accent { background: var(--accent-soft-bg); color: var(--accent-soft-text); font-weight: 600; border: none; }
 
 /* ---- Pull quote ---- */
-.pullquote-section { padding: 20px 0 100px; text-align: center; }
+.pullquote-section { padding-block: 20px 100px; text-align: center; }
 .pullquote-section p { font-family: 'Lora', serif; font-weight: 600; font-size: 30px; line-height: 1.4; }
 
 /* ---- Contact / footer ---- */
@@ -339,7 +332,7 @@ ul { list-style: none; }
 .case-page { max-width: 880px; margin: 0 auto; padding: 56px 56px 120px; }
 @media (max-width: 640px) { .case-page { padding: 40px 24px 100px; } }
 .case-back { cursor: pointer; color: var(--accent); font-weight: 600; font-size: 15px; display: inline-block; margin-bottom: 28px; }
-.case-page h1 { font-family: 'Lora', serif; font-weight: 600; font-size: 42px; line-height: 1.2; margin: 0 0 32px; }
+.case-page h1 { font-family: 'Lora', serif; font-weight: 600; font-size: clamp(30px, 8vw, 42px); line-height: 1.2; margin: 0 0 32px; }
 .case-meta {
   display: flex; gap: 48px; flex-wrap: wrap; margin-bottom: 40px; padding-bottom: 32px; border-bottom: 1px solid var(--border);
 }
@@ -484,3 +477,22 @@ ul { list-style: none; }
 
 /* ---- placeholder / empty state helper ---- */
 .hidden { display: none !important; }
+
+/* ---- Small phones (kept last so it overrides the base rules above) ---- */
+@media (max-width: 560px) {
+  .site-header { padding: 12px 20px 10px; flex-wrap: wrap; justify-content: flex-start; align-items: center; row-gap: 2px; }
+  .site-header:has(.nav-home:not(.hidden))::before { content: ''; order: 3; flex-basis: 100%; height: 0; }
+  .brand { order: 1; font-size: 18px; }
+  .nav-back { order: 2; margin-left: auto; font-size: 14px; }
+  .nav-home { display: contents; }
+  .nav-pill { display: none; }
+  .nav-resume { order: 2; margin-left: auto; padding: 8px 14px; font-size: 13px; }
+  .nav-home a:not(.nav-resume) { order: 4; padding: 6px 12px; font-size: 14px; }
+  .nav-home a:not(.nav-resume):first-of-type { margin-left: -12px; }
+  .hero { padding-block: 44px 64px; gap: 36px; }
+  .work-section { padding-block: 40px 72px; }
+  .about-section { padding: 64px 0; }
+  .philosophy-section { padding-block: 72px 90px; }
+  .contact-section { padding: 72px 24px 40px; }
+  .contact-inner h2 { font-size: 30px; }
+}
