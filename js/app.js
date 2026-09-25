@@ -118,11 +118,13 @@ function renderHome() {
       </div>
       <div class="skills-groups">
         <div class="skills-group">
-          <p class="skills-group-label">Research &amp; Strategy</p>
+          <p class="skills-group-label">Product &amp; Research</p>
           <div class="skills-list">
+            <span class="skill-pill">Product Management</span>
             <span class="skill-pill">UX Research</span>
             <span class="skill-pill">User Interviews</span>
             <span class="skill-pill">Usability Testing</span>
+            <span class="skill-pill">Presentation &amp; Storytelling</span>
           </div>
         </div>
         <div class="skills-group">
@@ -137,11 +139,26 @@ function renderHome() {
           </div>
         </div>
         <div class="skills-group">
-          <p class="skills-group-label">Tools &amp; Craft</p>
+          <p class="skills-group-label">3D &amp; Creative</p>
+          <div class="skills-list">
+            <span class="skill-pill">3D Modeling</span>
+            <span class="skill-pill">Animation</span>
+            <span class="skill-pill">Photography</span>
+            <span class="skill-pill">Video Editing</span>
+          </div>
+        </div>
+        <div class="skills-group">
+          <p class="skills-group-label">Tools</p>
           <div class="skills-list">
             <span class="skill-pill">Figma</span>
+            <span class="skill-pill">Claude Design</span>
+            <span class="skill-pill">Claude Code</span>
+            <span class="skill-pill">Blender</span>
+            <span class="skill-pill">Unreal Engine</span>
+            <span class="skill-pill">Canva</span>
+            <span class="skill-pill">Jira</span>
+            <span class="skill-pill">Confluence</span>
             <span class="skill-pill">Basic HTML/CSS</span>
-            <span class="skill-pill">Presentation &amp; Storytelling</span>
           </div>
         </div>
       </div>
