@@ -235,39 +235,46 @@ ul { list-style: none; }
 .about-copy p:last-child { margin-bottom: 0; }
 
 /* ---- Philosophy ---- */
-.philosophy-section { padding: 100px 0; }
-.philosophy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.philosophy-section { padding: 100px 0 130px; position: relative; isolation: isolate; }
+.philosophy-section::before {
+  content: ''; position: absolute; inset: 150px -40px 30px; z-index: -1; pointer-events: none; filter: blur(24px);
+  background:
+    radial-gradient(420px circle at 12% 55%, oklch(88% 0.09 345 / 0.38), transparent 70%),
+    radial-gradient(420px circle at 50% 50%, oklch(88% 0.08 300 / 0.32), transparent 70%),
+    radial-gradient(420px circle at 88% 60%, oklch(88% 0.08 250 / 0.34), transparent 70%);
+}
+.philosophy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; align-items: start; }
 @media (max-width: 800px) { .philosophy-grid { grid-template-columns: 1fr; } }
 .philosophy-card {
+  --h: 345;
   position: relative; overflow: hidden;
-  padding: 28px 24px; border: 1px solid var(--glass-border); border-radius: 18px;
+  padding: 32px 28px 30px; border-radius: 26px; border: 1px solid rgba(255,255,255,0.9);
   background:
-    radial-gradient(140% 120% at 0% 0%, oklch(90% 0.07 345 / 0.4), transparent 60%),
-    radial-gradient(140% 120% at 100% 100%, oklch(88% 0.06 150 / 0.35), transparent 60%),
-    var(--glass-bg);
-  backdrop-filter: blur(28px) saturate(180%); -webkit-backdrop-filter: blur(28px) saturate(180%);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.95), inset 0 -12px 24px -18px rgba(255,255,255,0.6), 0 10px 30px -14px oklch(23% 0.02 50 / 0.15);
+    radial-gradient(130% 90% at 0% 0%, oklch(93% 0.07 var(--h) / 0.9), transparent 70%),
+    linear-gradient(180deg, rgba(255,255,255,0.72), rgba(255,255,255,0.45));
+  backdrop-filter: blur(24px) saturate(160%); -webkit-backdrop-filter: blur(24px) saturate(160%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,1), 0 28px 50px -28px oklch(60% 0.12 var(--h) / 0.45);
   transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease;
 }
-.philosophy-card:nth-child(1) { transform: rotate(-1deg); }
-.philosophy-card:nth-child(2) { transform: rotate(0.8deg); }
-.philosophy-card:nth-child(3) { transform: rotate(-0.6deg); }
+.philosophy-card:nth-child(2) { --h: 300; translate: 0 32px; }
+.philosophy-card:nth-child(3) { --h: 250; }
+@media (max-width: 800px) { .philosophy-card:nth-child(2) { translate: none; } }
 .philosophy-card:hover {
-  transform: rotate(0deg) translateY(-6px);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.95), inset 0 -12px 24px -18px rgba(255,255,255,0.6), 0 20px 40px -16px oklch(23% 0.02 50 / 0.22);
+  transform: translateY(-8px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,1), 0 36px 60px -26px oklch(55% 0.14 var(--h) / 0.55);
 }
 .philosophy-num {
-  position: absolute; top: -6px; right: 6px; font-family: 'Space Grotesk', sans-serif; font-weight: 700;
-  font-size: 88px; color: var(--ink); opacity: 0.06; line-height: 1; pointer-events: none;
+  position: absolute; top: 8px; right: 20px; font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+  font-size: 96px; line-height: 1; color: oklch(72% 0.13 var(--h)); opacity: 0.22; pointer-events: none;
 }
 .philosophy-icon {
-  width: 42px; height: 42px; border-radius: 12px; margin-bottom: 16px;
+  width: 48px; height: 48px; border-radius: 15px; margin-bottom: 22px;
   display: flex; align-items: center; justify-content: center;
-  background: var(--surface); border: 1px solid var(--glass-border); color: var(--accent-soft-text);
+  background: oklch(90% 0.08 var(--h)); border: 1px solid rgba(255,255,255,0.9); color: oklch(40% 0.13 var(--h));
 }
-.philosophy-icon svg { width: 22px; height: 22px; }
-.philosophy-card h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 22px; margin: 0 0 8px; }
-.philosophy-card p.body { color: var(--ink-70); font-size: 15px; line-height: 1.6; }
+.philosophy-icon svg { width: 23px; height: 23px; }
+.philosophy-card h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 22px; margin: 0 0 10px; }
+.philosophy-card p.body { color: var(--ink-70); font-size: 15px; line-height: 1.65; }
 
 /* ---- Skills ---- */
 .skills-section { padding: 0 0 100px; }
@@ -312,7 +319,7 @@ ul { list-style: none; }
 }
 .marquee-track {
   display: inline-flex; align-items: center; gap: 28px; white-space: nowrap;
-  width: max-content; animation: marquee-scroll 22s linear infinite;
+  width: max-content; animation: marquee-scroll 60s linear infinite;
 }
 .marquee-strip:hover .marquee-track { animation-play-state: paused; }
 .marquee-track span {

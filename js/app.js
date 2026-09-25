@@ -5,7 +5,7 @@ const ICON_TARGET = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" 
 const ICON_LOUPE = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.3" y1="15.3" x2="20" y2="20"/></svg>`;
 const ICON_OVERLAP = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg>`;
 
-const MARQUEE_WORDS = ['Open to new opportunities', 'Say hello', 'marthale2001@gmail.com', "Let's make something real", 'Made with care in Dallas'];
+const MARQUEE_WORDS = ['Open to new opportunities', 'Say hello', "Let's make something real"];
 const MARQUEE_ITEMS = MARQUEE_WORDS.map(w => `<span>${escapeHtml(w)}</span><span class="marquee-dot">&#10022;</span>`).join('');
 
 function escapeHtml(str) {
@@ -76,8 +76,9 @@ function renderHome() {
         <div class="about-copy">
           <p class="eyebrow">About Me</p>
           <h2>A little more about me</h2>
-          <p>I'm a Sr. Product Associate based in Dallas who likes untangling messy workflows into interfaces that feel obvious in hindsight. My background spans internship work and coursework, from enterprise tools to mobile apps to 3D animation.</p>
-          <p>I care most about the parts of a project that don't show up in the final screenshots: the research that shaped a decision, the constraint that led to a simpler flow. I'm always looking for the next problem worth untangling.</p>
+          <p>Hi! I'm a Sr. Product Associate in Dallas. I spend my days working next to engineers and designers, and honestly, some of it rubbed off. Watching them build things made me want to learn the hard skills too, so now I'm learning to make things myself.</p>
+          <p>Outside of work, I'm all about traveling. Switzerland and Japan are my favorites so far, and I can't pick a winner. If there's a chance to do something a little scary, like paragliding, I'm probably in. Ask me about it.</p>
+          <p>I also like making content. When I travel, I love editing videos, and I'm really into photography and the aesthetics behind it.</p>
         </div>
       </div>
     </section>
@@ -161,12 +162,11 @@ function renderHome() {
         </div>
       </div>
       <div class="marquee-strip">
-        <div class="marquee-track">${MARQUEE_ITEMS}${MARQUEE_ITEMS}</div>
+        <div class="marquee-track">${MARQUEE_ITEMS.repeat(4)}${MARQUEE_ITEMS.repeat(4)}</div>
       </div>
       <div class="contact-inner">
         <div class="contact-foot">
           <span>Martha Le &copy; ${YEAR}</span>
-          <span>Made with care in Dallas</span>
         </div>
       </div>
     </section>
