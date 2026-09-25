@@ -409,6 +409,8 @@ ul { list-style: none; }
 .imagenote-grid figcaption { font-size: 12.5px; color: var(--ink-70); margin-top: 8px; text-align: center; }
 .imagenote-grid--wide { grid-template-columns: 1fr; gap: 28px; }
 .imagenote-grid--wide img { aspect-ratio: auto; height: auto; width: auto; max-width: 100%; margin: 0 auto; }
+.imagenote-grid--cols3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 640px) { .imagenote-grid--cols3 { grid-template-columns: repeat(2, 1fr); } }
 
 .columns-grid .title { font-weight: 600; font-size: 15px; margin-bottom: 8px; color: var(--accent); }
 .columns-grid .body { font-size: 14px; line-height: 1.6; color: var(--ink-70); }

@@ -225,7 +225,7 @@ function blockDivider(b) {
 
 function blockImageNote(b) {
   const gallery = (b.images || []).length ? `
-    <div class="imagenote-grid${b.wide ? ' imagenote-grid--wide' : ''}">
+    <div class="imagenote-grid${b.wide ? ' imagenote-grid--wide' : ''}${b.cols3 ? ' imagenote-grid--cols3' : ''}">
       ${b.images.map(img => `
         <figure>
           <img src="${escapeHtml(img.src)}" alt="${escapeHtml(img.alt || '')}" loading="lazy">
@@ -441,7 +441,7 @@ function renderCase(project) {
     </div>` : '';
 
   const liveLinkHtml = project.liveUrl ? `
-    <a class="case-live-link" href="${escapeHtml(project.liveUrl)}" target="_blank" rel="noopener">View Live Site &#8599;</a>` : '';
+    <a class="case-live-link" href="${escapeHtml(project.liveUrl)}" target="_blank" rel="noopener">${escapeHtml(project.liveLabel || 'View Live Site')} &#8599;</a>` : '';
 
   return `
     <div class="case-page">
