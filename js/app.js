@@ -1,6 +1,13 @@
 // Renders the home page and case-study pages, and drives hash-based routing.
 const YEAR = 2026;
 
+const ICON_TARGET = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="0.9" fill="currentColor" stroke="none"/></svg>`;
+const ICON_LOUPE = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.3" y1="15.3" x2="20" y2="20"/></svg>`;
+const ICON_OVERLAP = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg>`;
+
+const MARQUEE_WORDS = ['Open to new opportunities', 'Say hello', 'marthale2001@gmail.com', "Let's make something real", 'Made with care in Dallas'];
+const MARQUEE_ITEMS = MARQUEE_WORDS.map(w => `<span>${escapeHtml(w)}</span><span class="marquee-dot">&#10022;</span>`).join('');
+
 function escapeHtml(str) {
   if (str == null) return '';
   return String(str)
@@ -84,16 +91,19 @@ function renderHome() {
       <div class="philosophy-grid">
         <div class="philosophy-card">
           <p class="philosophy-num">01</p>
+          <div class="philosophy-icon">${ICON_TARGET}</div>
           <h3>User-Centered</h3>
           <p class="body">Every decision starts with the person using the product: their goals, context, and constraints shape everything that follows.</p>
         </div>
         <div class="philosophy-card">
           <p class="philosophy-num">02</p>
+          <div class="philosophy-icon">${ICON_LOUPE}</div>
           <h3>Detail-Oriented</h3>
           <p class="body">The small stuff (spacing, copy, a transition's timing) is what makes a product feel considered instead of just functional.</p>
         </div>
         <div class="philosophy-card">
           <p class="philosophy-num">03</p>
+          <div class="philosophy-icon">${ICON_OVERLAP}</div>
           <h3>Collaborative</h3>
           <p class="body">The best work happens in the open, with engineers, PMs, and users weighing in early and often.</p>
         </div>
@@ -105,19 +115,34 @@ function renderHome() {
         <p class="eyebrow">Toolkit</p>
         <h2>Skills &amp; Tools</h2>
       </div>
-      <div class="skills-list">
-        <span class="skill-pill solid">UX Research</span>
-        <span class="skill-pill">UI Design</span>
-        <span class="skill-pill">Prototyping</span>
-        <span class="skill-pill accent">Figma</span>
-        <span class="skill-pill">Wireframing</span>
-        <span class="skill-pill">Usability Testing</span>
-        <span class="skill-pill accent">User Interviews</span>
-        <span class="skill-pill">Design Systems</span>
-        <span class="skill-pill">Visual Design</span>
-        <span class="skill-pill solid">Interaction Design</span>
-        <span class="skill-pill">Basic HTML/CSS</span>
-        <span class="skill-pill">Presentation &amp; Storytelling</span>
+      <div class="skills-groups">
+        <div class="skills-group">
+          <p class="skills-group-label">Research &amp; Strategy</p>
+          <div class="skills-list">
+            <span class="skill-pill">UX Research</span>
+            <span class="skill-pill">User Interviews</span>
+            <span class="skill-pill">Usability Testing</span>
+          </div>
+        </div>
+        <div class="skills-group">
+          <p class="skills-group-label">Design &amp; Prototyping</p>
+          <div class="skills-list">
+            <span class="skill-pill">Interaction Design</span>
+            <span class="skill-pill">UI Design</span>
+            <span class="skill-pill">Prototyping</span>
+            <span class="skill-pill">Wireframing</span>
+            <span class="skill-pill">Visual Design</span>
+            <span class="skill-pill">Design Systems</span>
+          </div>
+        </div>
+        <div class="skills-group">
+          <p class="skills-group-label">Tools &amp; Craft</p>
+          <div class="skills-list">
+            <span class="skill-pill">Figma</span>
+            <span class="skill-pill">Basic HTML/CSS</span>
+            <span class="skill-pill">Presentation &amp; Storytelling</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -127,13 +152,18 @@ function renderHome() {
 
     <section id="contact" class="contact-section">
       <div class="contact-inner">
-        <h2>Let's build something good together</h2>
+        <h2>Let's make something real, together</h2>
         <a class="contact-email" href="mailto:marthale2001@gmail.com">marthale2001@gmail.com</a>
         <div class="contact-links">
           <a href="https://www.linkedin.com/in/marthanle" target="_blank" rel="noopener">LinkedIn</a>
           <a href="https://github.com/marthanle" target="_blank" rel="noopener">GitHub</a>
           <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
         </div>
+      </div>
+      <div class="marquee-strip">
+        <div class="marquee-track">${MARQUEE_ITEMS}${MARQUEE_ITEMS}</div>
+      </div>
+      <div class="contact-inner">
         <div class="contact-foot">
           <span>Martha Le &copy; ${YEAR}</span>
           <span>Made with care in Dallas</span>
@@ -207,6 +237,15 @@ function blockImageNote(b) {
       <h3>${escapeHtml(b.heading)}</h3>
       <p class="note">${escapeHtml(b.note)}</p>
       ${gallery}
+    </div>`;
+}
+
+function blockVideo(b) {
+  return `
+    <div class="blk blk-video">
+      ${b.heading ? `<h3>${escapeHtml(b.heading)}</h3>` : ''}
+      ${b.note ? `<p class="note">${escapeHtml(b.note)}</p>` : ''}
+      <video class="blk-video-player" src="${escapeHtml(b.src)}" controls playsinline preload="metadata"${b.poster ? ` poster="${escapeHtml(b.poster)}"` : ''}></video>
     </div>`;
 }
 
@@ -368,6 +407,7 @@ const BLOCK_RENDERERS = {
   audience: blockAudience,
   divider: blockDivider,
   imageNote: blockImageNote,
+  video: blockVideo,
   columns: blockColumns,
   features: blockFeatures,
   beforeAfter: blockBeforeAfter,
