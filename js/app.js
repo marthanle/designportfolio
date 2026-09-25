@@ -52,7 +52,7 @@ function renderHome() {
           <p class="hero-desc">Surrounded by people who design and code for a living, I caught the bug, and now I'm learning to build my own ideas instead of just managing everyone else's.</p>
           <div class="hero-cta">
             <a class="btn-primary" href="#work">See my work</a>
-            <a class="btn-secondary" href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+            <a class="btn-secondary" href="assets/resume.pdf" download="Martha-Nguyen-Le-Resume.pdf">Resume</a>
           </div>
         </div>
         <div class="hero-photo-wrap">
@@ -157,7 +157,7 @@ function renderHome() {
         <div class="contact-links">
           <a href="https://www.linkedin.com/in/marthanle" target="_blank" rel="noopener">LinkedIn</a>
           <a href="https://github.com/marthanle" target="_blank" rel="noopener">GitHub</a>
-          <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+          <a href="assets/resume.pdf" download="Martha-Nguyen-Le-Resume.pdf">Resume</a>
         </div>
       </div>
       <div class="marquee-strip">
