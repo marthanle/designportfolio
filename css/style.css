@@ -31,16 +31,20 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Soft ambient color mesh, used only behind the hero, work, and philosophy
-   sections, not as a global page background. */
+/* Ambient color mesh behind the hero. Sizes are percentages so the glow scales
+   with the screen instead of hugging the corners on wide monitors. */
 .mesh-zone {
-  position: relative;
+  position: relative; isolation: isolate;
   background:
-    radial-gradient(900px circle at -5% -10%, oklch(88% 0.07 345 / 0.3), transparent 60%),
-    radial-gradient(800px circle at 105% 15%, oklch(85% 0.07 260 / 0.24), transparent 60%),
-    radial-gradient(900px circle at 10% 85%, oklch(87% 0.06 150 / 0.22), transparent 55%),
-    radial-gradient(850px circle at 100% 105%, oklch(87% 0.07 30 / 0.22), transparent 60%),
+    radial-gradient(62% 90% at 0% 0%, oklch(85% 0.11 345 / 0.62), transparent 68%),
+    radial-gradient(58% 85% at 100% 4%, oklch(83% 0.10 260 / 0.55), transparent 68%),
+    radial-gradient(55% 75% at 6% 96%, oklch(87% 0.09 305 / 0.45), transparent 68%),
+    radial-gradient(60% 80% at 100% 98%, oklch(88% 0.10 40 / 0.5), transparent 68%),
     var(--bg);
+}
+.mesh-zone::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 110px; z-index: -1; pointer-events: none;
+  background: linear-gradient(to bottom, transparent, var(--bg));
 }
 
 img { display: block; max-width: 100%; }
